@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HiffloyWorld Travel Agency</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+html{scroll-behavior:smooth;}
+
+body{background:#f6f8fc;color:#1f2937;}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 24px;
+background:rgba(255,255,255,0.9);
+backdrop-filter:blur(12px);
+position:sticky;
+top:0;
+z-index:100;
+border-bottom:1px solid #e5e7eb;
+}
+
+.logo{font-weight:800;color:#2563eb;}
+
+.nav-links a{
+margin:0 10px;
+text-decoration:none;
+font-size:13px;
+color:#374151;
+}
+.nav-links a:hover{color:#2563eb;}
+
+.hero{
+height:92vh;
+background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.35)),
+url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+color:white;
+}
+
+.hero h1{font-size:56px;}
+.hero p{color:#e5e7eb;margin-top:10px;}
+
+.search-bar{
+margin-top:20px;
+background:rgba(255,255,255,0.9);
+padding:14px;
+border-radius:14px;
+display:flex;
+gap:10px;
+max-width:540px;
+margin:auto;
+border:1px solid #e5e7eb;
+}
+
+.search-bar input{
+flex:1;
+border:none;
+background:transparent;
+outline:none;
+}
+
+.search-bar button{
+background:#2563eb;
+color:white;
+border:none;
+padding:10px 14px;
+border-radius:10px;
+font-weight:600;
+cursor:pointer;
+}
+
+.section{padding:90px 20px;max-width:1100px;margin:auto;}
+.section h2{text-align:center;font-size:34px;}
+.section p.sub{text-align:center;color:#6b7280;font-size:13px;}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:35px;}
+
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.08);}
+.card img{width:100%;height:190px;object-fit:cover;}
+.card-content{text-align:center;padding:14px;}
+
+.package{background:#fff;border:1px solid #e5e7eb;padding:20px;border-radius:18px;}
+.package h3{color:#2563eb;}
+
+.testimonial{background:#fff;padding:18px;border-radius:16px;border:1px solid #e5e7eb;}
+.testimonial b{color:#2563eb;}
+
+form{max-width:520px;margin:auto;background:#fff;padding:25px;border-radius:18px;border:1px solid #e5e7eb;}
+
+input{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #e5e7eb;}
+
+button.btn{width:100%;padding:12px;background:#2563eb;color:#fff;border:none;border-radius:10px;font-weight:600;}
+
+.support-icons{display:flex;justify-content:center;gap:25px;margin-top:25px;}
+.icon-btn{width:70px;height:70px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:16px;border:1px solid #e5e7eb;font-size:22px;text-decoration:none;}
+
+.icon-btn.whatsapp{color:#25D366;}
+.icon-btn.support{color:#2563eb;}
+
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);display:none;align-items:center;justify-content:center;}
+.modal-content{background:#fff;padding:25px;border-radius:16px;text-align:center;}
+
+footer{text-align:center;padding:40px;color:#6b7280;font-size:13px;}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<div class="logo">HiffloyWorld</div>
+<div class="nav-links">
+<a href="#home">Home</a>
+<a href="#dest">Destinations</a>
+<a href="#pack">Packages</a>
+<a href="#book">Book</a>
+<a href="#support">Support</a>
+</div>
+</div>
+
+<section class="hero" id="home">
+<div>
+<h1>Luxury Travel, Redefined</h1>
+<p>Experience curated journeys across the world.</p>
+
+<div class="search-bar">
+<input placeholder="Where to?">
+<input type="date">
+<button>Explore</button>
+</div>
+</div>
+</section>
+
+<section class="section" id="dest">
+<h2>Explore Destinations</h2>
+<div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34"><div class="card-content"><b>Paris</b></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c"><div class="card-content"><b>Dubai</b></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21"><div class="card-content"><b>Maldives</b></div></div>
+</div>
+</section>
+
+<section class="section" id="pack">
+<h2>Travel Packages</h2>
+<div class="grid">
+<div class="package"><h3>Budget Explorer</h3></div>
+<div class="package"><h3>Comfort Plus</h3></div>
+<div class="package"><h3>Luxury Elite</h3></div>
+</div>
+</section>
+
+<section class="section">
+<h2>Testimonials</h2>
+<div class="grid">
+<div class="testimonial"><b>Sarah K.</b><p>"Amazing experience"</p></div>
+<div class="testimonial"><b>James T.</b><p>"Very professional"</p></div>
+<div class="testimonial"><b>Amina R.</b><p>"Top tier service"</p></div>
+</div>
+</section>
+
+<section class="section" id="book">
+<h2>Book Your Journey</h2>
+
+<form id="bookingForm">
+<input id="name" placeholder="Full Name" required>
+<input id="email" placeholder="Email" required>
+<input id="destination" placeholder="Destination" required>
+<input id="travelDate" type="date" required>
+<button class="btn" type="submit">Submit Booking</button>
+</form>
+</section>
+
+<section class="section" id="support">
+<h2>Support</h2>
+<div class="support-icons">
+<a class="icon-btn whatsapp" href="https://wa.me/2347037397542"><i class="fa-brands fa-whatsapp"></i></a>
+<a class="icon-btn support" href="https://hiffloy.freshdesk.com/support/home"><i class="fa-solid fa-headset"></i></a>
+</div>
+</section>
+
+<div class="modal" id="successModal">
+<div class="modal-content">
+<h3>Booking Received 🎉</h3>
+<p>We’ll send your quote soon.</p>
+</div>
+</div>
+
+<footer>© 2026 HiffloyWorld</footer>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit", async function(e){
+e.preventDefault();
+
+const data = {
+name: name.value,
+email: email.value,
+destination: destination.value,
+date: travelDate.value
+};
+
+const res = await fetch("/.netlify/functions/create-ticket", {
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify(data)
+});
+
+if(res.ok){
+successModal.style.display="flex";
+this.reset();
+setTimeout(()=>successModal.style.display="none",3000);
+}else{
+alert("Error submitting booking");
+}
+});
+</script>
+
+</body>
+</html>
