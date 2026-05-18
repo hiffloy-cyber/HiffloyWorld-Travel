@@ -253,31 +253,43 @@ footer{text-align:center;padding:40px;color:#6b7280;font-size:13px;}
 <footer>© 2026 HiffloyWorld</footer>
 
 <script>
+const successModal = document.getElementById("successModal");
+
 document.getElementById("bookingForm").addEventListener("submit", async function(e){
 e.preventDefault();
 
+const name = document.getElementById("name").value;
+const email = document.getElementById("email").value;
+const destination = document.getElementById("destination").value;
+const travelDate = document.getElementById("travelDate").value;
+
 const data = {
-name: name.value,
-email: email.value,
-destination: destination.value,
-date: travelDate.value
+name,
+email,
+destination,
+date: travelDate
 };
 
 const res = await fetch("/.netlify/functions/create-ticket", {
 method:"POST",
-headers:{"Content-Type":"application/json"},
+headers:{
+"Content-Type":"application/json"
+},
 body:JSON.stringify(data)
 });
 
 if(res.ok){
 successModal.style.display="flex";
 this.reset();
-setTimeout(()=>successModal.style.display="none",3000);
+
+setTimeout(()=>{
+successModal.style.display="none";
+},3000);
+
 }else{
 alert("Error submitting booking");
 }
 });
 </script>
-
 </body>
 </html>
