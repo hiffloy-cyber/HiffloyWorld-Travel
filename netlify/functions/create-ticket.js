@@ -1,38 +1,30 @@
 exports.handler = async (event) => {
   try {
-    const { name, email, destination, date } = JSON.parse(event.body);
+    console.log("EVENT:", event.body);
 
-    const response = await fetch(`https://${process.env.FRESHDESK_DOMAIN}/api/v2/tickets`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Basic " + Buffer.from(process.env.FRESHDESK_API_KEY + ":X").toString("base64")
-      },
-      body: JSON.stringify({
-        subject: `New Booking: ${destination}`,
-        description: `
-Name: ${name}
-Email: ${email}
-Destination: ${destination}
-Date: ${date}
-        `,
-        email: email,
-        priority: 2,
-        status: 2
-      })
-    });
+    if (!event.body) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "No data received" })
+      };
+    }
 
-    const data = await response.json();
+    const data = JSON.parse(event.body);
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ success: true, data })
+      body: JSON.stringify({
+        message: "Function working",
+        received: data
+      })
     };
 
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ success: false, error: error.message })
+      body: JSON.stringify({
+        error: error.message
+      })
     };
   }
 };
